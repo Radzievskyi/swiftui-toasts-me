@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-  name: "swiftui-toasts",
+  name: "swiftui-toasts-me",
   platforms: [.iOS(.v14)],
   products: [
     .library(
