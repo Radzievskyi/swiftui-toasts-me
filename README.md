@@ -16,6 +16,7 @@ A toast notification library for SwiftUI.
 - Dark mode support
 - Slide gesture to dismiss
 - Loading state interface with async/await
+- Added vertical padding option to have space from top / bottom 
 
 ## Usage
 
@@ -30,7 +31,7 @@ struct MyApp: App {
   var body: some Scene {
     WindowGroup {
       ContentView()
-        .installToast(position: .bottom)
+        .installToast(position: .bottom, padding: 8.0)
     }
   }
 }
