@@ -4,6 +4,7 @@ import SwiftUI
 internal final class ToastManager: ObservableObject {
 
   @Published internal var position: ToastPosition = .top
+  @Published internal var padding: CGFloat = 0.0
   @Published internal private(set) var models: [ToastModel] = []
   @Published internal private(set) var isAppeared = false
   @Published internal var safeAreaInsets: EdgeInsets = .init()

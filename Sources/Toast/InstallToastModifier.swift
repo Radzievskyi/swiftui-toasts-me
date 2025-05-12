@@ -10,13 +10,14 @@ extension View {
   ///
   /// - Parameter position: The vertical position where toasts will appear. Default is `.bottom`.
   /// - Returns: A view with toast presentation capability.
-  public func installToast(position: ToastPosition = .bottom) -> some View {
-    self.modifier(InstallToastModifier(position: position))
+    public func installToast(position: ToastPosition = .bottom, padding: CGFloat = 0.0) -> some View {
+    self.modifier(InstallToastModifier(position: position, padding: padding))
   }
 }
 
 private struct InstallToastModifier: ViewModifier {
   var position: ToastPosition
+  var padding: CGFloat
   @State private var manager = ToastManager()
   func body(content: Content) -> some View {
     content
@@ -29,6 +30,9 @@ private struct InstallToastModifier: ViewModifier {
       }
       ._onChange(of: position, initial: true) {
         manager.position = $1
+      }
+      ._onChange(of: padding, initial: true) {
+        manager.padding = $1
       }
       .addToastSafeAreaObserver()
       .onPreferenceChange(SafeAreaInsetsPreferenceKey.self) {

@@ -33,6 +33,7 @@ internal struct ToastRootView: View {
             )
           )
       }
+      .padding(.vertical, manager.padding)
 
       if isTop { Spacer() }
     }
