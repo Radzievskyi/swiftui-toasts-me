@@ -9,6 +9,7 @@ extension View {
   /// `presentToast` environment value.
   ///
   /// - Parameter position: The vertical position where toasts will appear. Default is `.bottom`.
+  /// - Parameter padding: The vertical padding where toasts will appear. Default is  0.0`.
   /// - Returns: A view with toast presentation capability.
     public func installToast(position: ToastPosition = .bottom, padding: CGFloat = 0.0) -> some View {
     self.modifier(InstallToastModifier(position: position, padding: padding))
